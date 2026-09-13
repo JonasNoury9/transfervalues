@@ -76,3 +76,44 @@ cpi |>
   ) +
   theme_minimal()
 ```
+
+## Consumer Price Index Observations Since 2005
+
+```{r}
+#| label: plot-cpi-observations
+#| message: false
+
+# Plot every available country-year CPI observation since 2005
+cpi |>
+  pivot_longer(
+    cols = matches("^[0-9]{4}$"),
+    names_to = "year",
+    values_to = "cpi_value"
+  ) |>
+  mutate(year = as.numeric(year)) |>
+  filter(year >= 2005, year <= 2024, !is.na(cpi_value), cpi_value > 0) |>
+  ggplot(aes(x = year, y = cpi_value)) +
+  geom_jitter(
+    width = 0.15,
+    height = 0,
+    alpha = 0.22,
+    size = 1.2,
+    color = "#2878b5"
+  ) +
+  stat_summary(
+    fun = median,
+    geom = "line",
+    aes(group = 1),
+    color = "#d1495b",
+    linewidth = 1.1
+  ) +
+  scale_x_continuous(breaks = seq(2005, 2024, by = 3)) +
+  scale_y_log10(labels = scales::label_number()) +
+  labs(
+    title = "Country-Level Consumer Price Index Observations",
+    subtitle = "Thousands of World Bank country-year observations since 2005; red line shows the yearly median",
+    x = "Year",
+    y = "Consumer Price Index (2010 = 100, log scale)"
+  ) +
+  theme_minimal()
+```
