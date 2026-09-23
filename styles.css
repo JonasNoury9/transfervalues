@@ -118,6 +118,76 @@ h1, h2, h3 {
   padding: 0.5rem;
 }
 
+.story-chart-container {
+  margin: 1.4rem 0 2rem;
+  padding: 0.9rem;
+  background: linear-gradient(145deg, rgba(7, 40, 28, 0.8), rgba(4, 23, 17, 0.72));
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.story-chart-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.story-chart-container svg text {
+  fill: #edf7f1;
+  font-family: "Aptos", "Trebuchet MS", sans-serif;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+}
+
+.story-chart-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.story-chart-axis-label,
+.story-chart-tick {
+  font-size: 10px;
+}
+
+.story-chart-grid {
+  stroke: rgba(255,255,255,0.12);
+  stroke-width: 1;
+}
+
+.story-chart-value-line,
+.story-chart-cpi-line {
+  fill: none;
+  stroke-width: 3;
+}
+
+.story-chart-value-line {
+  stroke: #62c5ff;
+}
+
+.story-chart-cpi-line {
+  stroke: #f7c948;
+}
+
+.story-chart-value-point {
+  fill: #62c5ff;
+  stroke: #071e18;
+  stroke-width: 2;
+}
+
+.story-chart-legend-value,
+.story-chart-legend-cpi {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.story-chart-legend-value {
+  fill: #62c5ff !important;
+}
+
+.story-chart-legend-cpi {
+  fill: #f7c948 !important;
+}
+
 img {
   border-radius: 8px;
 }
@@ -245,4 +315,176 @@ img {
 @keyframes field-scroll {
   0% { background-position: 0 0, 0 0, 0 0; }
   100% { background-position: 0 0, 0 160px, 0 100%; }
+}
+
+body {
+  --ink: #e8eef7;
+  --ink-muted: #9eafc3;
+  background: #0b1220;
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(46, 157, 185, 0.18), transparent 34%),
+    radial-gradient(circle at 8% 18%, rgba(64, 91, 160, 0.16), transparent 30%),
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(145deg, #0e1a2b 0%, #101a2b 54%, #0a111e 100%);
+  background-size: auto, auto, 44px 44px, 44px 44px, auto;
+  animation: none;
+}
+
+body::after {
+  background: radial-gradient(ellipse at center, transparent 38%, rgba(3, 7, 14, 0.46) 100%);
+}
+
+#quarto-document-content {
+  background: rgba(13, 23, 38, 0.76);
+  border: 1px solid rgba(159, 183, 211, 0.14);
+  border-radius: 12px;
+  padding: 1.5rem 1.6rem 0.8rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+  backdrop-filter: blur(10px);
+}
+
+h1, h2, h3, p, li {
+  color: var(--ink);
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+h1, h2, h3 {
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 1.8rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(159, 183, 211, 0.16);
+}
+
+p, li {
+  line-height: 1.7;
+}
+
+.quarto-title .title {
+  color: #f3f7fc;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  letter-spacing: -0.025em;
+  text-shadow: none;
+}
+
+.quarto-title-author {
+  color: var(--ink-muted);
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+.panel-tabset .nav-tabs {
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(159, 183, 211, 0.18);
+}
+
+.panel-tabset .nav-link {
+  padding: 0.65rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 7px 7px 0 0;
+  color: #9eafc3;
+  font-weight: 700;
+}
+
+.panel-tabset .nav-link:hover {
+  color: #e8eef7;
+  border-color: rgba(159, 183, 211, 0.14);
+  background: rgba(159, 183, 211, 0.06);
+}
+
+.panel-tabset .nav-link.active {
+  color: #f3f7fc;
+  border-color: rgba(99, 194, 222, 0.42) rgba(99, 194, 222, 0.42) #0d1726;
+  background: #0d1726;
+  box-shadow: inset 0 -2px 0 #63c2de;
+}
+
+.figure,
+.story-chart-container,
+#cpiChartContainer {
+  background: rgba(16, 30, 49, 0.82);
+  border: 1px solid rgba(159, 183, 211, 0.16);
+  border-radius: 9px;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.16);
+}
+
+.story-chart-container {
+  margin-top: 1.2rem;
+}
+
+.story-chart-container svg text,
+#cpiChartContainer text {
+  text-shadow: none;
+}
+
+.year-selector-row {
+  margin: 1rem 0 1.15rem;
+}
+
+#yearSelect {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(159, 183, 211, 0.26);
+  border-radius: 6px;
+  background: #111f32;
+  color: var(--ink);
+  -webkit-text-stroke: 0;
+}
+
+.year-selector-row label,
+.chart-panel-header,
+.chart-panel-header .chart-title,
+.chart-panel-header .chart-range,
+.top25-table th,
+.top25-table td,
+#cpiChartContainer text {
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+.top25-table {
+  background: rgba(11, 21, 35, 0.86);
+  border: 1px solid rgba(159, 183, 211, 0.16);
+  border-radius: 8px;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.14);
+}
+
+.top25-table th,
+.top25-table td {
+  padding: 0.65rem 0.75rem;
+  border-bottom-color: rgba(159, 183, 211, 0.1);
+  color: #dce6f2;
+}
+
+.top25-table th {
+  background: #172b43;
+  color: #f3f7fc;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.top25-table tbody tr:hover {
+  background: rgba(99, 194, 222, 0.08);
+}
+
+@media (max-width: 600px) {
+  #quarto-document-content {
+    padding: 1rem 0.85rem 0.5rem;
+  }
+
+  .panel-tabset .nav-link {
+    padding: 0.55rem 0.75rem;
+  }
 }
