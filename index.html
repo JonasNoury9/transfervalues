@@ -77,9 +77,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Story</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Explore</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>As most kids and teenagers did in 2017, I was scrolling on Instagram looking at a bunch of different soccer/sports pages. Many of those pages would talk about Transfermarkt prices for soccer players. On August 3rd, I saw Neymar was sold to PSG for € 222 million. At this time, that was a world record transfer and was pretty crazy to the soccer community. The highest transfer price before that was less than half, at € 105 million. Because of that, I started to wonder how the prices have changed over time for transfer values relative to the prices of everything in the world/the Consumer Price Index. The Consumer Price Index (CPI) is a measure of the average change over time in the prices paid by urban consumers for a market basket of goods and services, and it is the most widely used indicator of inflation in the United States. In simpler terms, it can also be how much a certain amount of money today could buy you in the years prior. Since 2005, the U.S. CPI has risen from about 195.3 in 2005 to 334.1 in August 2026, reflecting an overall increase of roughly 71% in price. I wanted to make a project with images and data sets to help show other people this relation.</p>
-<section id="top-25-most-valuable-players-by-year" class="level2">
-<h2 class="anchored" data-anchor-id="top-25-most-valuable-players-by-year">Top 25 Most Valuable Players by Year</h2>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Transfermarkt is a soccer data website that tracks players, clubs, transfers, and estimated market values. The table below uses Transfermarkt data to show the 25 players with the highest estimated market values for each selected year.</p>
 <div class="year-selector-row">
 <p><label for="yearSelect">Choose a year:</label> <select id="yearSelect"></select></p>
@@ -299,11 +303,11 @@ if (years.length > 0) {
   updateSelection(years[years.length - 1]);
 }
 </script>
+<section id="project" class="level3">
+<h3 class="anchored" data-anchor-id="project">Project</h3>
 </section>
-<section id="project" class="level1">
-<h1>Project</h1>
-<section id="transfer-market-values-over-time" class="level2">
-<h2 class="anchored" data-anchor-id="transfer-market-values-over-time">Transfer Market Values Over Time</h2>
+<section id="transfer-market-values-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="transfer-market-values-over-time">Transfer Market Values Over Time</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -314,8 +318,8 @@ if (years.length > 0) {
 </div>
 </div>
 </section>
-<section id="consumer-price-index-over-time" class="level2">
-<h2 class="anchored" data-anchor-id="consumer-price-index-over-time">Consumer Price Index Over Time</h2>
+<section id="consumer-price-index-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="consumer-price-index-over-time">Consumer Price Index Over Time</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -326,8 +330,20 @@ if (years.length > 0) {
 </div>
 </div>
 </section>
-<section id="consumer-price-index-observations-since-2005" class="level2">
-<h2 class="anchored" data-anchor-id="consumer-price-index-observations-since-2005">Consumer Price Index Observations Since 2005</h2>
+<section id="average-player-market-value-and-cpi-since-2005" class="level3">
+<h3 class="anchored" data-anchor-id="average-player-market-value-and-cpi-since-2005">Average Player Market Value and CPI Since 2005</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project_files/figure-html/plot-market-value-cpi-comparison-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="consumer-price-index-observations-since-2005" class="level3">
+<h3 class="anchored" data-anchor-id="consumer-price-index-observations-since-2005">Consumer Price Index Observations Since 2005</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -338,8 +354,8 @@ if (years.length > 0) {
 </div>
 </div>
 </section>
-<section id="ballon-dor-winners-and-market-values" class="level2">
-<h2 class="anchored" data-anchor-id="ballon-dor-winners-and-market-values">Ballon d’Or Winners and Market Values</h2>
+<section id="ballon-dor-winners-and-market-values" class="level3">
+<h3 class="anchored" data-anchor-id="ballon-dor-winners-and-market-values">Ballon d’Or Winners and Market Values</h3>
 <p>The Ballon d’Or is an annual award given to the soccer player judged to have performed the best during the year. It is voted on by journalists from around the world and is one of the most prestigious individual awards in soccer. The table below lists each winner along with their position, club, age, and estimated market value at the time.</p>
 <table class="caption-top table">
 <colgroup>
@@ -524,7 +540,9 @@ if (years.length > 0) {
 </tbody>
 </table>
 </section>
-</section>
+</div>
+</div>
+</div>
 
 </main>
 <!-- /main column -->
